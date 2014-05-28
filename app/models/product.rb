@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
 private
   
   def destroy_logger
-    logger.info "#{self} is being destroyed."
+    logger.info "#{self} is about to be deleted."
   end
 
 end
