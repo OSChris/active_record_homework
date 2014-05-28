@@ -18,6 +18,11 @@ class Product < ActiveRecord::Base
     grab_new_products.where.not(["price = sale_price"]).order("sale_price ASC").limit(3)
   end
 
+  def plus_one
+    self.increment(:hit_count)
+    self.save
+  end
+
 private
   
   def destroy_logger
